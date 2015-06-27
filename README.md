@@ -3,7 +3,8 @@
 This won't currently win any design awards. Should probably add bootstrap. Need
 to tweak the scrolling check to create a smoother scroll, probably with some preload.
 Haven't gotten around to autocomplete yet, will probably just throw in lookahead
-or some decent library. Could optimize Handlebars template compilation.
+or some decent library. Could optimize Handlebars template compilation. Could use
+promises instead of custom events for loading.
 
 Current external dependencies: lodash.js, handlebars.js
 
