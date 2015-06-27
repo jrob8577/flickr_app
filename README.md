@@ -10,7 +10,7 @@ Current external dependencies: lodash.js, handlebars.js
 ### Part 1
 
 #### API Requests to Flickr
-See the lib directory
+See the [lib/flickr_api](https://github.com/jrob8577/flickr_app/tree/master/lib/flickr_api) directory
 
 #### Load pictures in a continuous scroll
 See the app/javascripts/flickr directory
