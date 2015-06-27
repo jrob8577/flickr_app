@@ -13,12 +13,12 @@ Current external dependencies: lodash.js, handlebars.js
 See the [lib/flickr_api](https://github.com/jrob8577/flickr_app/tree/master/lib/flickr_api) directory
 
 #### Load pictures in a continuous scroll
-See the app/javascripts/flickr directory
+See the [app/assets/javascripts/flickr](https://github.com/jrob8577/flickr_app/tree/master/app/assets/javascripts/flickr) directory
 
 ### Part 2
 
 #### Tap image brings up larger image with details
-See the app/javascripts/flickr directory
+See the [app/assets/javascripts/flickr/flickr_photo_viewer](https://github.com/jrob8577/flickr_app/blob/master/app/assets/javascripts/flickr/flickr_photo_viewer.coffee)
 
 ### Part 3
 
@@ -28,6 +28,6 @@ Wasn't sure what this meant :shrug:
 ### Part 4
 
 #### Add a search bar and run a search for images
-See the app/javascripts flickr directory
+See the [app/assets/javascripts/flickr](https://github.com/jrob8577/flickr_app/tree/master/app/assets/javascripts/flickr) directory
 
 Currently implemented to search by tag, but switching out to text search is easy enough
