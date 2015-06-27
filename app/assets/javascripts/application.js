@@ -14,3 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require libs/manifest
+//= require home
+//= require flickr/manifest

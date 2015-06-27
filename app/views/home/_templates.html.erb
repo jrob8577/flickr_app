@@ -1,0 +1,42 @@
+<script id="item-template" type="text/x-handlebars-template">
+  <div class="item" data-id="{{id}}">
+    <img src="https://farm{{farm}}.staticflickr.com/{{server}}/{{id}}_{{secret}}_t.jpg" />
+  </div>
+</script>
+
+<script id="paging-template" type="text/x-handlebars-template">
+  <div class="paging-message">
+    <div class="message">
+      <%= image_tag 'ajax-loader.gif' %> Loading Page {{page}}...
+    </div>
+  </div>
+</script>
+
+<script id="photo-template" type="text/x-handlebars-template">
+  <div id="photo-details">
+    <div id="detail">
+      <div id="close">X</div>
+      <img src="https://farm{{farm}}.staticflickr.com/{{server}}/{{id}}_{{secret}}_n.jpg" />
+      <dl>
+        <dt>Title</dt>
+        <dd>{{{title._content}}}</dd>
+
+        <dt>Taken</dt>
+        <dd>{{dates.taken}}</dd>
+
+        <dt>Views</dt>
+        <dd>{{views}}</dd>
+
+        <dt>Description</dt>
+        <dd>{{{description._content}}}
+
+        <dt>Tags</dt>
+        <dd>
+          {{#each tags.tag}}
+            {{this._content}}
+          {{/each}}
+        </dd>
+      </dl>
+    </div>
+  </div>
+</script>
