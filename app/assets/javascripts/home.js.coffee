@@ -9,5 +9,7 @@ $ ->
     if event.keyCode == 13
       scroller.reset(new TagSearchData)
 
+    event.stopPropagation()
+
   $('#reset').on 'click', (event) ->
     scroller.reset(new InterestingnessData)

@@ -16,7 +16,7 @@ class FlickrScroller
       @toggle_scroll()
 
       @data_provider.fetch_next (photos) =>
-        @data_to_html(photos, @).appendTo(@el).hide().fadeIn(500)
+        @data_to_html(photos, @).appendTo(@el).hide().fadeIn(300)
         @toggle_scroll()
 
   should_scroll: ->
@@ -26,8 +26,15 @@ class FlickrScroller
     $(window).scrollTop() + $(window).height()
 
   data_to_html: (photos) ->
-    elements = $((_.map photos, @photo_to_html, @).join(''))
-    $(elements, '.item').on 'click', (event) ->
+    elements = _.map photos, @photo_to_html, @
+    # TODO make this configurable
+    elements = _.chunk elements, 6
+    # TODO should probably templatize this, nasty to hide this here
+    elements = $((_.map elements, (item_array) ->
+      "<div class=\"row photo-row\">#{item_array.join('')}</div>").join(''))
+
+    $('a.item', elements).on 'click', (event) ->
+      event.stopPropagation()
       new FlickrPhotoViewer $(@).data('id')
 
     elements

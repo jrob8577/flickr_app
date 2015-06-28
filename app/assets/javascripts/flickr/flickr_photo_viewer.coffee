@@ -1,8 +1,8 @@
 class FlickrPhotoViewer
   constructor: (id) ->
     @id = id
+    @modal = $('#photo-modal')
     @detail_template = Handlebars.compile $('#photo-template').html()
-    @data = {}
 
     $(@).on 'ready', @render
     @fetch()
@@ -12,18 +12,21 @@ class FlickrPhotoViewer
     $(@).off 'ready'
 
     @el = $(@detail_template(@data))
-    $(@el, '#close').on 'click', @die
+    @el.appendTo(@modal)
 
-    @el.appendTo('body').hide().fadeIn(500)
+    $('a#close').on 'click', @close_viewer
+
+    @modal.foundation('reveal', 'open')
 
   fetch: ->
+    # TODO use a data-provider and get rid of custom envents
     $.get "/flickr/photo/#{@id}", (result) =>
       @data = result.photo
       $(@).trigger 'ready'
 
-  die: =>
-    $(@).off
-    @el.fadeOut 200, () =>
-      @el.remove()
+  close_viewer: =>
+    @modal.foundation('reveal', 'close')
+    $('a#close').off
+    @modal.empty()
 
 @.FlickrPhotoViewer = FlickrPhotoViewer

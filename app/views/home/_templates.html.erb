@@ -1,6 +1,8 @@
 <script id="item-template" type="text/x-handlebars-template">
-  <div class="item" data-id="{{id}}">
-    <img src="https://farm{{farm}}.staticflickr.com/{{server}}/{{id}}_{{secret}}_t.jpg" />
+  <div class="small-2 columns">
+    <a class="item th radius" data-id="{{id}}">
+      <img src="https://farm{{farm}}.staticflickr.com/{{server}}/{{id}}_{{secret}}_t.jpg" />
+    </a>
   </div>
 </script>
 
@@ -13,9 +15,9 @@
 </script>
 
 <script id="photo-template" type="text/x-handlebars-template">
+  <a href="#" id="close" class="button tiny round right">Close</a>
   <div id="photo-details">
     <div id="detail">
-      <div id="close">X</div>
       <img src="https://farm{{farm}}.staticflickr.com/{{server}}/{{id}}_{{secret}}_n.jpg" />
       <dl>
         <dt>Title</dt>

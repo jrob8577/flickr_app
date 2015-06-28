@@ -1,34 +1,22 @@
 # README
 
-This won't currently win any design awards. Should probably add bootstrap. Need
-to tweak the scrolling check to create a smoother scroll, probably with some preload.
-Haven't gotten around to autocomplete yet, will probably just throw in lookahead
-or some decent library. Could optimize Handlebars template compilation. Could use
-promises instead of custom events for loading.
+### TODOS
+* Tweak scrolling to begin preload in advance of scroll to end
+* Ensure enough images are loaded initially
+* Autocomplete (lookeahead looks fun)
+* Handlebars compilation optimization (should compile and cache, instead of recompile on item instantiation)
+* Some jankiness in flickr_scroller now, but was tired of misaligned thumbnails
+* Photo viewer should probably use a data provider for consistency
+* Play with promises for loading (get rid of custom events?)
 
-Current external dependencies: lodash.js, handlebars.js
+Current external dependencies: lodash.js, handlebars.js, foundation.css/js
 
-### Part 1
+### 6/27
+* Shitcanned turbolinks - is that ever useful on a JS enabled site?
+* Added foundation for more pretty + basic mobile - improved image detail modal
 
-#### API Requests to Flickr
-See the [lib/flickr_api](https://github.com/jrob8577/flickr_app/tree/master/lib/flickr_api) directory
-
-#### Load pictures in a continuous scroll
-See the [app/assets/javascripts/flickr](https://github.com/jrob8577/flickr_app/tree/master/app/assets/javascripts/flickr) directory
-
-### Part 2
-
-#### Tap image brings up larger image with details
-See the [app/assets/javascripts/flickr/flickr_photo_viewer](https://github.com/jrob8577/flickr_app/blob/master/app/assets/javascripts/flickr/flickr_photo_viewer.coffee)
-
-### Part 3
-
-#### Add details to grid view
-Wasn't sure what this meant :shrug:
-
-### Part 4
-
-#### Add a search bar and run a search for images
-See the [app/assets/javascripts/flickr](https://github.com/jrob8577/flickr_app/tree/master/app/assets/javascripts/flickr) directory
-
-Currently implemented to search by tag, but switching out to text search is easy enough
+### 6/26
+* API Requests to Flickr: [lib/flickr_api](https://github.com/jrob8577/flickr_app/tree/master/lib/flickr_api)
+* Continuous Scroll: [app/assets/javascripts/flickr](https://github.com/jrob8577/flickr_app/tree/master/app/assets/javascripts/flickr)
+* Click image for details: [app/assets/javascripts/flickr/flickr_photo_viewer](https://github.com/jrob8577/flickr_app/blob/master/app/assets/javascripts/flickr/flickr_photo_viewer.coffee)
+* Basic search bar (by tag): [app/assets/javascripts/flickr](https://github.com/jrob8577/flickr_app/tree/master/app/assets/javascripts/flickr)

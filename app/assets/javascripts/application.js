@@ -12,7 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require foundation
 //= require libs/manifest
 //= require home
 //= require flickr/manifest
+
+$(function(){ $(document).foundation(); });

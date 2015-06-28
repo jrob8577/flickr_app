@@ -1,14 +1,49 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>FlickrApp</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <div id="container">
-  <%= yield %>
-  </div>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Flickr App" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application" %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <div class="sticky">
+      <nav class="top-bar" data-topbar role="navigation">
+        <ul class="title-area">
+          <li class="name">
+            <h1><%= link_to 'Flickr App', root_path %></h1>
+          </li>
+        </ul>
+        <section role="menu" class="top-bar-section">
+          <ul class="left">
+            <li class="divider"></li>
+            <li class="has-form">
+              <div class="row collapse">
+                <div class="small-8 columns">
+                  <input type="text" placeholder="Tag Search" id="search-box" />
+                </div>
+                <div class="small-4 columns" style="line-height: 1.9em;">
+                  <a href="#" id="reset" class="alert button expand">Reset</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+    <div class="row">
+      <div class="small-12 columns">
+        <%= yield %>
+      </div>
+    </div>
+  </body>
 </html>
