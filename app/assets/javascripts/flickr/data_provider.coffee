@@ -1,7 +1,7 @@
 class DataProvider
   constructor: (url) ->
     @page = 1
-    @per_page = 60
+    @per_page = 78
     @url = url
 
   fetch_next: (callback) ->

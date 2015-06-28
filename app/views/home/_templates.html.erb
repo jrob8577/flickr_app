@@ -15,10 +15,14 @@
 </script>
 
 <script id="photo-template" type="text/x-handlebars-template">
-  <a href="#" id="close" class="button tiny round right">Close</a>
-  <div id="photo-details">
-    <div id="detail">
-      <img src="https://farm{{farm}}.staticflickr.com/{{server}}/{{id}}_{{secret}}_n.jpg" />
+  <div class="row">
+    <a href="#" id="close" class="button tiny round right">Close</a>
+  </div>
+  <div class="row">
+    <div class="small-4 columns">
+      <img src="https://farm{{farm}}.staticflickr.com/{{server}}/{{id}}_{{secret}}.jpg" class="left th" />
+    </div>
+    <div class="small-8 columns">
       <dl>
         <dt>Title</dt>
         <dd>{{{title._content}}}</dd>
